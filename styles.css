@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
 
 /* Header Section */
@@ -143,4 +144,93 @@ footer {
     background-color: #0a1e52;
     border-top: 2px solid #ffbf00;
     margin-top: 3rem;
-}           
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Adjust header padding and font size */
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+    }
+
+    /* Main content adjustments */
+    main {
+        margin-top: 2rem;
+    }
+
+    .content h2 {
+        font-size: 1rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .batch-buttons {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
+        max-width: 90%; /* Increase width slightly */
+        grid-gap: 10px;
+    }
+
+    .btn {
+        padding: 0.8rem 0; /* Adjust padding for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .watch-btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Extra Small Screen (Mobile Portrait Mode) */
+@media (max-width: 480px) {
+    /* Adjust header and content spacing */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .nav-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    /* Main content adjustments */
+    .content h2 {
+        font-size: 0.9rem;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .batch-buttons {
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+        grid-gap: 15px;
+    }
+
+    .btn {
+        padding: 1rem; /* Adjust for smaller screens */
+        font-size: 1rem;
+    }
+
+    .watch-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+}
