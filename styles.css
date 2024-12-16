@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;            
+}
+
+body {
+    background-color: #0a1e52; /* Deep Blue */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background-color: #0a1e52;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ffbf00; /* Yellow Border */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.logo span {
+    background-color: #fff;
+    color: #0a1e52;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.nav-btn {
+    color: #0a1e52;
+    background-color: #ffbf00;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #e5a800;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.content h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffbf00; /* Yellow */
+    margin: 1rem 0;
+}
+
+.bangla-text, .eng-text {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.notice {
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #ddd;
+}
+
+.watch-btn {
+    display: inline-block;
+    background-color: #ffbf00;
+    color: #0a1e52;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.watch-btn:hover {
+    background-color: #e5a800;
+    transform: scale(1.05);
+}
+
+/* Batch Buttons in 3x5 Grid (centered) */
+.batch-buttons {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-gap: 15px; /* Space between buttons */
+    justify-items: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    max-width: 80%; /* Limit max width of the grid */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: #ffbf00;
+    color: #0a1e52;
+    padding: 1rem 0; /* Adjust padding for vertical size */
+    width: 100%; /* Ensure buttons take up equal space in grid */
+    height: 50px; /* Set a fixed height for buttons */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: flex; /* Flexbox to align text vertically */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+.btn:hover {
+    background-color: #e5a800;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #0a1e52;
+    border-top: 2px solid #ffbf00;
+    margin-top: 3rem;
+}           
