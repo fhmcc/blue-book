@@ -28,7 +28,56 @@
             </p> <br>
             <p class="notice">
                 [ Images may appear small in mobile browser. Zoom or set the phone in landscape mode to get perfect view ]
-            </p> <br>
+            </p> 
+            <br>
+            <br>
+             <!-- Slideshow section -->
+<div class="slideshow-container" style="width: 80%; height: 70%; margin: auto; border: 6px solid black; padding: 10px; position: relative;">
+    <!-- Manual navigation arrows on the left side -->
+    <a class="prev" onclick="plusSlides(-1)" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">&#10094;</a>
+
+    <!-- Manual navigation arrows on the right side -->
+    <a class="next" onclick="plusSlides(1)" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">&#10095;</a>
+
+    <div class="mySlides">
+        <img src="photo/1.JPG" style="width:100%">
+    </div>
+
+ <div class="mySlides">
+        <img src="photo/2.JPG" style="width:100%">
+    </div>
+  
+     <div class="mySlides">
+        <img src="3.JPG" style="width:100%">
+    </div>
+   
+</div>
+
+<script>
+    var slideIndex = 0;
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    showSlides(); // Initialize slideshow
+</script>
+<!-- End Slideshow section -->
+            <br>
             <br>
            
             <!-- Batch Buttons in 3x5 Grid -->
