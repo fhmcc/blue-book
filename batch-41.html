@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slideshow</title>
+    <style>
+        /* General Body Style */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #002366; /* Blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #FFC107;
+            background-color: #002366;
+            padding: 8px 12px;
+            border: 2px solid #FFC107;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            background-color: #FFC107;
+            color: #002366;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 90%;
+            max-height: 90%;
+            border: 15px solid #FFC107; /* Yellow frame */
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Images */
+        .slides {
+            display: none;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain; /* Ensures image fits without being cropped */
+        }
+
+        /* Arrow Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FFC107;
+            color: #002366;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            user-select: none;
+            z-index: 10;
+        }
+
+        .prev { left: calc(50% - 550px); }
+        .next { right: calc(50% - 550px); }
+
+        .prev:hover, .next:hover {
+            background-color: #FFB300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .prev, .next {
+                padding: 8px 16px;
+                font-size: 18px;
+            }
+
+            .back-button {
+                font-size: 14px;
+            }
+
+            .prev { left: 10px; }
+            .next { right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">Back</a>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Images with Hyperlinks -->
+        <a href="https://example.com/image1" target="_blank">
+            <img class="slides" src="photo/41A.JPG" alt="Image 1">
+        </a>
+        <a href="https://example.com/image2" target="_blank">
+            <img class="slides" src="photo/41B.JPG" alt="Image 2">
+        </a>
+        <a href="https://example.com/image3" target="_blank">
+            <img class="slides" src="photo/41C.JPG" alt="Image 3">
+        </a>
+         <a href="https://example.com/image3" target="_blank">
+            <img class="slides" src="photo/41D.JPG" alt="Image 3">
+             
+        </a> <a href="https://example.com/image3" target="_blank">
+            <img class="slides" src="photo/41E.JPG" alt="Image 3">
+            
+        </a> <a href="https://example.com/image3" target="_blank">
+            <img class="slides" src="photo/41F.JPG" alt="Image 3">
+        </a>
+    </div>
+
+    <!-- Arrow Buttons -->
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slides");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+</body>
+</html>
